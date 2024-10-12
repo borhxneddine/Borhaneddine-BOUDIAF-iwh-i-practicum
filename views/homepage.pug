@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title #{title}
+        link(rel='stylesheet', href='/css/homepage.css') 
+    body
+        h1 Custom Object Records
+        a(href='/update-cobj') Add to this table
+        table
+            thead
+                tr
+                    th Name
+                    th Bio
+                    th Age
+            tbody
+                each record in data
+                    tr
+                        td #{record.properties.name}
+                        td #{record.properties.bio}
+                        td #{record.properties.age}
+        if data.length === 0
+            p No records found. // Message when there are no records
